@@ -38,7 +38,7 @@ It was the year of Our Lord one thousand seven hundred and seventy-five. Spiritu
 	
     function formatBodyText(inputText) {
       let result = '';
-	  inputText = inputText.replaceAll(/\t/g, "");
+	  inputText = inputText.replaceAll(/\t/g, " ");
 	  inputText = inputText.replaceAll("$", "\" + CHAR(36) + \"");
       const lines = inputText.split(/\r?\n/);
 
@@ -66,6 +66,9 @@ It was the year of Our Lord one thousand seven hundred and seventy-five. Spiritu
 	
 	function processBodyText() {
       const input = document.getElementById('inputText').value;
+	  if (input.includes('[guid]') == false || input.includes('[PLACEHOLDER]') == false ) {
+ 						 throw new Error("Input text must contain [guid] and [PLACEHOLDER]");
+					  }
       const output = formatBodyText(input);
       document.getElementById('outputText').value = output;
 	  navigator.clipboard.writeText(output);
