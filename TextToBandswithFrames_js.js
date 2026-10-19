@@ -66,7 +66,7 @@ It was the year of Our Lord one thousand seven hundred and seventy-five. Spiritu
 	
 	function processBodyText() {
       const input = document.getElementById('inputText').value;
-	  if (input.includes('[guid]') == false || input.includes('[PLACEHOLDER]') == false ) {
+	  if (!input.includes("[guid]") || !input.includes("[PLACEHOLDER]") ) {
  						 throw new Error("Input text must contain [guid] and [PLACEHOLDER]");
 					  }
       const output = formatBodyText(input);
