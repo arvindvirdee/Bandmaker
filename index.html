@@ -23,13 +23,18 @@
   <div class="tab-content content-1">
   	  <p>Enter your paragraphs in here separated by carriage returns...</p>
 	  <p>Hyperlinks and email addresses will automatically be formatted.</p>
-	  <textarea id="inputText"></textarea>
+	  <p>Click these buttons to add HTML tags surrounding the selected text in the input window.</p>
 	  <div class="inline">
-	  <button onclick="tagSelectedText('b')"<b>B</b></button>
-	  <button onclick="tagSelectedText('i')"<i>i</i></button>
-	  <button onclick="tagSelectedText('u')"<u>u</u></button>
+	  <button onclick="tagSelectedText('b')"><b>B</b></button>
+	  <button onclick="tagSelectedText('i')"><i>i</i></button>
+	  <button onclick="tagSelectedText('u')"><u>u</u></button>
+	  <button onclick="tagSelectedText('ol')">ol</button>
+	  <button onclick="tagSelectedText('ul')">ul</button>
+	  <button onclick="tagSelectedText('li')">li</button>
 	  </div>
+	  <textarea id="inputText"></textarea>
   </div>
+
 
   <!-- Content Panel 2 -->
   <div class="tab-content content-2">
