@@ -91,7 +91,7 @@ It was the year of Our Lord one thousand seven hundred and seventy-five. Spiritu
 }
 
 
-function tagSelectedText(hTag) {
+window.tagSelectedText = function(hTag) {
 const inputEl = document.getElementById('inputText');
 const openTag = "<" + hTag + ">";
 const closeTag = "</" + hTag + ">";
