@@ -85,7 +85,46 @@ It was the year of Our Lord one thousand seven hundred and seventy-five. Spiritu
         var v = c === 'x' ? r : (r & 0x3 | 0x8); // Handles RFC compliance for 'y'
         return v.toString(16);
     });
-	
+
+	function insertAt(original, index, insertStr) {
+  return original.slice(0, index) + insertStr + original.slice(index);
+}
+
+
+function tagSelectedText(hTag) {
+const inputEl = document.getElementById('inputText');
+const openTag = "<" + hTag + ">";
+const closeTag = "</" + hTag + ">";
+const start = inputEl.selectionStart;
+const end = inputEl.selectionEnd;
+
+let outputText = 
+  insertAt(inputEl.value,end,closeTag);
+outputText = insertAt(outputText,start,openTag);
+inputEl.value = outputText;
+
+const newCursorPos = end + openTag.length;
+inputEl.setSelectionRange(newCursorPos, newCursorPos);
+}
+
+document.addEventListener('keydown', (event) => {
+  // Check if Ctrl (Windows/Linux) or Cmd (Mac) is held down
+  if (event.ctrlKey || event.metaKey) {
+    
+    // Normalize to lowercase to handle CapsLock or Shift
+    const key = event.key.toLowerCase(); 
+
+    switch (key) {
+      case 'b':
+      case 'i':
+      case 'u':
+        event.preventDefault();
+        tagSelectedText(key);
+        break;
+
+    }
+  }
+});	
 
 	
 }
