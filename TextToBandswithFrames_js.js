@@ -100,7 +100,7 @@ window.tagSelectedText = function(hTag) {
     inputEl.value = outputText;
 
     const newCursorPos = end + openTag.length;
-    inputEl.setSelectionRange(newCursorPos, newCursorPos);
+    inputEl.setSelectionRange(start, end);
 }
 
 document.addEventListener('keydown', (event) => {
