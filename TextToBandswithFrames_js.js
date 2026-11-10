@@ -59,7 +59,7 @@ function formatBodyText(inputText) {
     
 function makeBand(line) {
     line = jasperText.value.replaceAll('[PLACEHOLDER]', line);
-    line = line.replaceAll('[guid]', generateLegacyGUID());
+    line = line.replaceAll('[guid]', () => generateLegacyGUID());
     return line;
 }
 
